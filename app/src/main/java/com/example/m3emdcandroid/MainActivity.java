@@ -10,8 +10,11 @@ import androidx.core.view.WindowCompat;
 import com.example.m3emdcandroid.ui.component.AppBarActivity;
 import com.example.m3emdcandroid.ui.component.ButtonGroupsActivity;
 import com.example.m3emdcandroid.ui.component.CommonButtonActivity;
+import com.example.m3emdcandroid.ui.component.ExtendedFABActivity;
 import com.example.m3emdcandroid.ui.component.FABMenuActivity;
 import com.example.m3emdcandroid.ui.component.FABsActivity;
+import com.example.m3emdcandroid.ui.component.IconButtonActivity;
+import com.example.m3emdcandroid.ui.component.LoadingIndicatorActivity;
 import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         MaterialCardView efCard = findViewById(R.id.extended_fab_card);
         MaterialCardView fmCard = findViewById(R.id.fab_menu_card);
         MaterialCardView fCard = findViewById(R.id.fabs_card);
+        MaterialCardView ibCard = findViewById(R.id.icon_buttons_card);
+        MaterialCardView liCard = findViewById(R.id.loading_indicator_card);
 
         demoCard.setOnClickListener(v -> {
             Intent intent = new Intent(this, AppBarActivity.class);
@@ -55,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         efCard.setOnClickListener(v -> {
-            Intent intent = new Intent(this, CommonButtonActivity.class);
+            Intent intent = new Intent(this, ExtendedFABActivity.class);
             startActivity(intent);
         });
         fmCard.setOnClickListener(v -> {
@@ -64,6 +69,16 @@ public class MainActivity extends AppCompatActivity {
         });
         fCard.setOnClickListener(v -> {
             Intent intent = new Intent(this, FABsActivity.class);
+            startActivity(intent);
+        });
+
+        ibCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, IconButtonActivity.class);
+            startActivity(intent);
+        });
+
+        liCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, LoadingIndicatorActivity.class);
             startActivity(intent);
         });
 

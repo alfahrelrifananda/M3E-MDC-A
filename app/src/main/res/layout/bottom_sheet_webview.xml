@@ -41,21 +41,18 @@
             app:iconSize="20dp" />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/colorOutlineVariant" />
-
     <LinearLayout
         android:id="@+id/loading_container"
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_height="5dp">
+        android:layout_height="10dp">
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progress_indicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:wavelengthIndeterminate="33dp"
+            app:waveAmplitude="2dp"
             android:indeterminate="true" />
     </LinearLayout>
 

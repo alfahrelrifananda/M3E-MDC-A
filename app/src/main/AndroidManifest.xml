@@ -28,7 +28,9 @@
         <activity android:name=".ui.component.CommonButtonActivity" />
         <activity android:name=".ui.component.ExtendedFABActivity" />
         <activity android:name=".ui.component.FABMenuActivity" />
-        <activity android:name=".ui.component.FA" />
+        <activity android:name=".ui.component.FABsActivity" />
+        <activity android:name=".ui.component.IconButtonActivity" />
+        <activity android:name=".ui.component.LoadingIndicatorActivity" />
     </application>
 
 </manifest>

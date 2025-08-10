@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorSurface"
     android:fitsSystemWindows="false"
-    tools:context="ui.component.CommonButtonActivity">
+    tools:context="ui.component.LoadingIndicatorActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
@@ -42,7 +42,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_weight="1"
                     android:elevation="0dp"
-                    app:title="Common Button"/>
+                    app:title="Loading Indicator"/>
 
             </LinearLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -82,7 +82,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Buttons allow users to take actions, and make choices, with a single tap."
+                        android:text="Loading indicators show the progress for a short wait time."
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
@@ -122,86 +122,29 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Filled Button : "
+                        android:text="Default : "
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
                         android:layout_marginTop="16dp"/>
 
-                    <Button
-                        android:layout_width="match_parent"
-                        android:text="Filled Button"
-                        android:layout_height="wrap_content"/>
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Elevated Button : "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"
-                        android:layout_marginTop="16dp"/>
-
-                    <Button
-                        style="@style/Widget.Material3.Button.ElevatedButton"
-                        android:layout_width="match_parent"
-                        android:text="Elevated Button"
+                    <com.google.android.material.loadingindicator.LoadingIndicator
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Tonal Button : "
+                        android:text="Contained : "
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
                         android:layout_marginTop="16dp"/>
 
-                    <Button
-                        style="@style/Widget.Material3.Button.TonalButton"
-                        android:layout_width="match_parent"
-                        android:text="Tonal Button"
+                    <com.google.android.material.loadingindicator.LoadingIndicator
+                        style="@style/Widget.Material3.LoadingIndicator.Contained"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Outlined Button : "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"
-                        android:layout_marginTop="16dp"/>
-
-                    <Button
-                        style="@style/Widget.Material3.Button.OutlinedButton"
-                        android:layout_width="match_parent"
-                        android:text="Outlined Button"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Text Button : "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"
-                        android:layout_marginTop="16dp"/>
-
-                    <Button
-                        style="@style/Widget.Material3.Button.TextButton"
-                        android:layout_width="match_parent"
-                        android:text="Text Button"
-                        android:layout_height="wrap_content"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                    </LinearLayout>
-
-
-
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

@@ -117,7 +117,7 @@
                         android:text="Appearance"
                         android:textAppearance="?attr/textAppearanceHeadlineSmall"
                         android:textColor="?attr/colorOnSurface"
-                        android:layout_marginBottom="12dp"/>
+                        android:layout_marginBottom="0dp"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
