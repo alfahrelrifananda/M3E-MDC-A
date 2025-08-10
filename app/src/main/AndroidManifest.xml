@@ -26,6 +26,9 @@
         <activity android:name=".ui.component.AppBarActivity" />
         <activity android:name=".ui.component.ButtonGroupsActivity" />
         <activity android:name=".ui.component.CommonButtonActivity" />
+        <activity android:name=".ui.component.ExtendedFABActivity" />
+        <activity android:name=".ui.component.FABMenuActivity" />
+        <activity android:name=".ui.component.FA" />
     </application>
 
 </manifest>
