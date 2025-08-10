@@ -31,5 +31,20 @@
         <item name="cornerSizeBottomLeft">32dp</item>
         <item name="cornerSizeBottomRight">32dp</item>
     </style>
+    <style name="TopCornersCardShapeChild" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">8dp</item>
+        <item name="cornerSizeTopRight">8dp</item>
+        <item name="cornerSizeBottomLeft">4dp</item>
+        <item name="cornerSizeBottomRight">4dp</item>
+    </style>
+
+    <style name="BottomCornerCardShapeChild" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">4dp</item>
+        <item name="cornerSizeTopRight">4dp</item>
+        <item name="cornerSizeBottomLeft">8dp</item>
+        <item name="cornerSizeBottomRight">8dp</item>
+    </style>
 
 </resources>

@@ -9,6 +9,7 @@ import androidx.core.view.WindowCompat;
 
 import com.example.m3emdcandroid.ui.component.AppBarActivity;
 import com.example.m3emdcandroid.ui.component.ButtonGroupsActivity;
+import com.example.m3emdcandroid.ui.component.CommonButtonActivity;
 import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupClickedCard() {
         MaterialCardView demoCard = findViewById(R.id.app_bars_card);
         MaterialCardView bgCard = findViewById(R.id.button_groups_card);
+        MaterialCardView cbCard = findViewById(R.id.common_buttons_card);
 
         demoCard.setOnClickListener(v -> {
             Intent intent = new Intent(this, AppBarActivity.class);
@@ -39,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
         bgCard.setOnClickListener(v -> {
             Intent intent = new Intent(this, ButtonGroupsActivity.class);
+            startActivity(intent);
+        });
+
+        cbCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CommonButtonActivity.class);
             startActivity(intent);
         });
     }

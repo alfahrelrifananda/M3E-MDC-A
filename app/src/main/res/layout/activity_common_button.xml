@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorSurface"
     android:fitsSystemWindows="false"
-    tools:context="ui.component.ButtonGroupsActivity">
+    tools:context="ui.component.CommonButtonActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
@@ -42,7 +42,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_weight="1"
                     android:elevation="0dp"
-                    app:title="Button Groups"/>
+                    app:title="Common Button"/>
 
             </LinearLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -82,7 +82,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Button groups organize buttons and add interactions between them."
+                        android:text="Buttons allow users to take actions, and make choices, with a single tap."
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
@@ -122,121 +122,77 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Fixed Button Sizes : "
+                        android:text="Filled Button : "
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
-                        android:layout_marginBottom="16dp"/>
+                        android:layout_marginTop="16dp"/>
 
-                    <com.google.android.material.button.MaterialButtonGroup
+                    <Button
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="8dp"
-                        android:gravity="center_horizontal"
-                        android:spacing="4dp">
-                        <Button
-                            style="?attr/materialIconButtonFilledStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            app:iconGravity="textStart"
-                            app:icon="@drawable/ic_baseline_skip_previous_24"/>
-                        <Button
-                            style="?attr/materialIconButtonFilledStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            app:iconGravity="textStart"
-                            app:icon="@drawable/ic_baseline_play_arrow_24"/>
-                        <Button
-                            style="?attr/materialIconButtonFilledStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            app:iconGravity="textStart"
-                            app:icon="@drawable/ic_baseline_skip_next_24"/>
-                    </com.google.android.material.button.MaterialButtonGroup>
+                        android:text="Filled Button"
+                        android:layout_height="wrap_content"/>
+
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Flexible Button Sizes : "
+                        android:text="Elevated Button : "
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
-                        android:layout_marginBottom="16dp"/>
+                        android:layout_marginTop="16dp"/>
 
-                    <com.google.android.material.button.MaterialButtonGroup
+                    <Button
+                        style="@style/Widget.Material3.Button.ElevatedButton"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="8dp"
-                        android:gravity="center_horizontal"
-                        android:spacing="4dp">
-                        <Button
-                            style="?attr/materialIconButtonFilledStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            app:iconGravity="textStart"
-                            app:icon="@drawable/ic_baseline_skip_previous_24"/>
-                        <Button
-                            style="?attr/materialIconButtonFilledStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            app:iconGravity="textStart"
-                            app:icon="@drawable/ic_baseline_play_arrow_24"/>
-                        <Button
-                            style="?attr/materialIconButtonFilledStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            app:iconGravity="textStart"
-                            app:icon="@drawable/ic_baseline_skip_next_24"/>
-                    </com.google.android.material.button.MaterialButtonGroup>
+                        android:text="Elevated Button"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Mixed Button Sizes : "
+                        android:text="Tonal Button : "
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
-                        android:layout_marginBottom="16dp"/>
+                        android:layout_marginTop="16dp"/>
 
-                    <com.google.android.material.button.MaterialButtonGroup
+                    <Button
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="match_parent"
+                        android:text="Tonal Button"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="8dp"
-                        android:gravity="center_horizontal"
-                        android:spacing="4dp">
-                        <Button
-                            style="?attr/materialIconButtonFilledStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            app:iconGravity="textStart"
-                            app:icon="@drawable/ic_baseline_skip_previous_24"/>
-                        <Button
-                            style="?attr/materialIconButtonFilledStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            app:iconGravity="textStart"
-                            app:icon="@drawable/ic_baseline_play_arrow_24"/>
-                        <Button
-                            style="?attr/materialIconButtonFilledStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            app:iconGravity="textStart"
-                            app:icon="@drawable/ic_baseline_skip_next_24"/>
-                    </com.google.android.material.button.MaterialButtonGroup>
+                        android:text="Outlined Button : "
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:lineSpacingMultiplier="1.4"
+                        android:layout_marginTop="16dp"/>
 
+                    <Button
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:text="Outlined Button"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Text Button : "
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:lineSpacingMultiplier="1.4"
+                        android:layout_marginTop="16dp"/>
+
+                    <Button
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:text="Text Button"
+                        android:layout_height="wrap_content"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

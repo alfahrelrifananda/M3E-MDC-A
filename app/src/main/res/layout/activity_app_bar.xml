@@ -6,14 +6,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSecondaryContainer"
+    android:background="?attr/colorSurface"
     android:fitsSystemWindows="false"
     tools:context="ui.component.AppBarActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
         android:paddingTop="48dp"
-        android:background="?attr/colorSecondaryContainer"
+        android:background="?attr/colorSurface"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
@@ -27,7 +27,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:titleCollapseMode="scale"
             app:toolbarId="@id/toolbar"
-            app:contentScrim="?attr/colorSecondaryContainer"
+            app:contentScrim="?attr/colorSurface"
             app:statusBarScrim="@color/transparent">
 
             <LinearLayout
@@ -70,29 +70,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
                 app:cardBackgroundColor="?attr/colorSurface"
-                app:shapeAppearanceOverlay="@style/TopCornersCardShape"
+                app:shapeAppearanceOverlay="@style/TopCornersCardShapeChild"
                 style="?attr/materialCardViewFilledStyle">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="10dp"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
+                    android:orientation="vertical">
+
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Introduction"
-                        android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                        android:textColor="?attr/colorOnSurface"
-                        android:layout_marginBottom="12dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="App bars display information and actions relating to the current screen. This collapsing toolbar layout demonstrates Material Design's flexible header behavior that adapts as users scroll through content."
+                        android:text="App bars are placed at the top of the screen to help people navigate through a product. There are four variants of app bars. \n \nNote: The top app bar component is renamed to app bar in the design language."
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
@@ -101,113 +91,79 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="?attr/colorOnSurface"/>
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
+                android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="?attr/colorSurface"
-                app:shapeAppearanceOverlay="@style/BottomCornerCardShape"
+                app:cardCornerRadius="4dp"
                 style="?attr/materialCardViewFilledStyle">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Code "
+                        android:text="Appearance"
                         android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                        android:textColor="?attr/colorOnSurface" />
+                        android:textColor="?attr/colorOnSurface"
+                        android:layout_marginBottom="12dp"/>
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Java :"
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"/>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/javaCodeCard"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
-                        app:strokeColor="@color/transparent"
-                        app:cardBackgroundColor="@android:color/black">
-
-                        <LinearLayout
+                        android:orientation="vertical">
+                        <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="12dp">
+                            android:src="@drawable/topappbar_variants"
+                            android:layout_height="330dp"/>
+                    </LinearLayout>
 
-                            <HorizontalScrollView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:scrollbars="horizontal">
 
-                                <TextView
-                                    android:id="@+id/javaCodeText"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="public class AppBarActivity extends AppCompatActivity {\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        EdgeToEdge.enable(this);\n        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);\n        getWindow().setFlags(\n                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,\n                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS\n        );\n\n        setContentView(R.layout.activity_app_bar);\n\n        MaterialToolbar toolbar = findViewById(R.id.toolbar);\n        setSupportActionBar(toolbar);\n\n        toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);\n        toolbar.setNavigationOnClickListener(v -&gt; onBackPressed());\n    }\n\n    @Override\n    public boolean onSupportNavigateUp() {\n        onBackPressed();\n        return true;\n    }\n}"
-                                    android:textAppearance="?attr/textAppearanceBodySmall"
-                                    android:textColor="@android:color/white"
-                                    android:fontFamily="monospace"
-                                    android:textSize="11sp"
-                                    android:textIsSelectable="true"/>
 
-                            </HorizontalScrollView>
 
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="XML :"
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"/>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/xmlCodeCard"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
-                        app:strokeColor="@color/transparent"
-                        app:cardBackgroundColor="@android:color/black">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="12dp">
-
-                            <HorizontalScrollView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:scrollbars="horizontal">
-
-                                <TextView
-                                    android:id="@+id/xmlCodeText"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;\n&lt;androidx.coordinatorlayout.widget.CoordinatorLayout\n    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;\n    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;\n    xmlns:tools=&quot;http://schemas.android.com/apk/res/tools&quot;\n    android:id=&quot;@+id/main&quot;\n    android:layout_width=&quot;match_parent&quot;\n    android:layout_height=&quot;match_parent&quot;\n    android:background=&quot;?attr/colorSecondaryContainer&quot;\n    android:fitsSystemWindows=&quot;false&quot;\n    tools:context=&quot;ui.component.AppBarActivity&quot;&gt;\n\n    &lt;com.google.android.material.appbar.AppBarLayout\n        android:id=&quot;@+id/appbarlayout&quot;\n        android:paddingTop=&quot;48dp&quot;\n        android:background=&quot;?attr/colorSecondaryContainer&quot;\n        android:layout_width=&quot;match_parent&quot;\n        android:layout_height=&quot;wrap_content&quot;\n        android:fitsSystemWindows=&quot;true&quot;&gt;\n\n        &lt;com.google.android.material.appbar.CollapsingToolbarLayout\n            style=&quot;?attr/collapsingToolbarLayoutMediumStyle&quot;\n            android:id=&quot;@+id/collapsingtoolbarlayout&quot;\n            android:layout_width=&quot;match_parent&quot;\n            android:paddingHorizontal=&quot;8dp&quot;\n            android:layout_height=&quot;?attr/collapsingToolbarLayoutMediumSize&quot;\n            app:layout_scrollFlags=&quot;scroll|exitUntilCollapsed|snap&quot;\n            app:titleCollapseMode=&quot;scale&quot;\n            app:toolbarId=&quot;@id/toolbar&quot;\n            app:contentScrim=&quot;?attr/colorSecondaryContainer&quot;\n            app:statusBarScrim=&quot;@color/transparent&quot;&gt;\n\n            &lt;LinearLayout\n                android:layout_width=&quot;match_parent&quot;\n                android:layout_height=&quot;wrap_content&quot;\n                android:orientation=&quot;horizontal&quot;\n                app:layout_collapseMode=&quot;pin&quot;&gt;\n\n                &lt;com.google.android.material.appbar.MaterialToolbar\n                    android:id=&quot;@+id/toolbar&quot;\n                    android:layout_width=&quot;0dp&quot;\n                    android:layout_height=&quot;?attr/actionBarSize&quot;\n                    android:layout_weight=&quot;1&quot;\n                    android:elevation=&quot;0dp&quot;\n                    app:title=&quot;App Bars&quot;/&gt;\n\n            &lt;/LinearLayout&gt;\n        &lt;/com.google.android.material.appbar.CollapsingToolbarLayout&gt;\n    &lt;/com.google.android.material.appbar.AppBarLayout&gt;\n\n    &lt;androidx.core.widget.NestedScrollView\n        android:id=&quot;@+id/nested_scroll_view&quot;\n        android:layout_width=&quot;match_parent&quot;\n        android:layout_height=&quot;match_parent&quot;\n        android:clipToPadding=&quot;false&quot;\n        android:paddingTop=&quot;16dp&quot;\n        android:paddingBottom=&quot;80dp&quot;\n        android:paddingHorizontal=&quot;16dp&quot;\n        android:scrollbarStyle=&quot;outsideOverlay&quot;\n        android:scrollbars=&quot;vertical&quot;\n        app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot;&gt;\n\n        &lt;LinearLayout\n            android:layout_width=&quot;match_parent&quot;\n            android:layout_height=&quot;wrap_content&quot;\n            android:orientation=&quot;vertical&quot;&gt;"
-                                    android:textAppearance="?attr/textAppearanceBodySmall"
-                                    android:fontFamily="monospace"
-                                    android:textColor="@android:color/white"
-                                    android:textSize="11sp"
-                                    android:textIsSelectable="true"/>
-
-                            </HorizontalScrollView>
-
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="?attr/colorOnSurface"/>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:shapeAppearanceOverlay="@style/BottomCornerCardShapeChild"
+                style="?attr/materialCardViewFilledStyle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/documentation_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Documentation"/>
+
+                </LinearLayout>
+
+
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>

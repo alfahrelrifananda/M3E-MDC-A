@@ -12,7 +12,7 @@ import com.example.m3emdcandroid.R;
 import com.example.m3emdcandroid.ui.component.webview.WebViewBottomSheetFragment;
 import com.google.android.material.appbar.MaterialToolbar;
 
-public class AppBarActivity extends AppCompatActivity {
+public class CommonButtonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class AppBarActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
 
-        setContentView(R.layout.activity_app_bar);
+        setContentView(R.layout.activity_common_button);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -35,7 +35,7 @@ public class AppBarActivity extends AppCompatActivity {
         Button documentationButton = findViewById(R.id.documentation_button);
         documentationButton.setOnClickListener(v -> {
             WebViewBottomSheetFragment bottomSheet = WebViewBottomSheetFragment.newInstance(
-                    "https://github.com/material-components/material-components-android/blob/master/docs/components/TopAppBar.md"
+                    "https://github.com/material-components/material-components-android/blob/master/docs/components/Button.md"
             );
             bottomSheet.show(getSupportFragmentManager(), "WebViewBottomSheet");
         });
