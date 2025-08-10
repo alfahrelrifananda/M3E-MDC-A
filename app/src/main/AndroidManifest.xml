@@ -31,6 +31,9 @@
         <activity android:name=".ui.component.FABsActivity" />
         <activity android:name=".ui.component.IconButtonActivity" />
         <activity android:name=".ui.component.LoadingIndicatorActivity" />
+        <activity android:name=".ui.component.NavigationBarActivity" />
+        <activity android:name=".ui.component.NavigationRailActivity" />
+        <activity android:name=".ui.component.ProgressIndicatorsActivity" />
     </application>
 
 </manifest>

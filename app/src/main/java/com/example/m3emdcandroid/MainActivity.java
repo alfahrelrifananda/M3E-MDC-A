@@ -15,6 +15,9 @@ import com.example.m3emdcandroid.ui.component.FABMenuActivity;
 import com.example.m3emdcandroid.ui.component.FABsActivity;
 import com.example.m3emdcandroid.ui.component.IconButtonActivity;
 import com.example.m3emdcandroid.ui.component.LoadingIndicatorActivity;
+import com.example.m3emdcandroid.ui.component.NavigationBarActivity;
+import com.example.m3emdcandroid.ui.component.NavigationRailActivity;
+import com.example.m3emdcandroid.ui.component.ProgressIndicatorsActivity;
 import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         MaterialCardView fCard = findViewById(R.id.fabs_card);
         MaterialCardView ibCard = findViewById(R.id.icon_buttons_card);
         MaterialCardView liCard = findViewById(R.id.loading_indicator_card);
+        MaterialCardView nbCard = findViewById(R.id.navigation_bar_card);
+        MaterialCardView nrCard = findViewById(R.id.navigation_rail_card);
+        MaterialCardView piCard = findViewById(R.id.progress_indicators_card);
 
         demoCard.setOnClickListener(v -> {
             Intent intent = new Intent(this, AppBarActivity.class);
@@ -79,6 +85,20 @@ public class MainActivity extends AppCompatActivity {
 
         liCard.setOnClickListener(v -> {
             Intent intent = new Intent(this, LoadingIndicatorActivity.class);
+            startActivity(intent);
+        });
+        nbCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, NavigationBarActivity.class);
+            startActivity(intent);
+        });
+
+        nrCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, NavigationRailActivity.class);
+            startActivity(intent);
+        });
+
+        piCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ProgressIndicatorsActivity.class);
             startActivity(intent);
         });
 
