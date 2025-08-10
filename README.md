@@ -21,13 +21,11 @@ https://github.com/alfahrelrifananda/Rel-Music.git
 ```
 2. Open the project in Android Studio
 3. Build and run the app!
-4. Grant storage permissions to access your music files
 
 ## Requirements
 - Android Studio
 - Minimum SDK: API 24 (Android 7.0)
 - Target SDK: API 34
-- Storage permissions for accessing local music files
 
 ## Contributing
 Feel free to open issues or submit pull requests. All contributions are welcome!
