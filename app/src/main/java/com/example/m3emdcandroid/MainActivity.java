@@ -1,0 +1,45 @@
+package com.example.m3emdcandroid;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.WindowManager;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
+
+import com.example.m3emdcandroid.ui.component.AppBarActivity;
+import com.example.m3emdcandroid.ui.component.ButtonGroupsActivity;
+import com.google.android.material.card.MaterialCardView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        EdgeToEdge.enable(this);
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        );
+
+        setContentView(R.layout.activity_main);
+        setupClickedCard();
+    }
+
+    private void setupClickedCard() {
+        MaterialCardView demoCard = findViewById(R.id.app_bars_card);
+        MaterialCardView bgCard = findViewById(R.id.button_groups_card);
+
+        demoCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, AppBarActivity.class);
+            startActivity(intent);
+        });
+
+        bgCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ButtonGroupsActivity.class);
+            startActivity(intent);
+        });
+    }
+}

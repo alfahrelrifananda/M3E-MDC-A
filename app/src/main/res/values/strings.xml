@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">M3E MDC-Android</string>
+    <string name="m3e_for_mdc_android">M3E for MDC-Android</string>
+    <string name="new_material_3_expressive_components">New Material 3 Expressive Components</string>
+    <string name="app_bars">App bars</string>
+    <string name="top_and_bottom_app_bars_with_dynamic_layouts">Top and bottom app bars with dynamic layouts</string>
+</resources>

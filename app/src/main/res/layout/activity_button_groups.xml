@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="?attr/colorSecondaryContainer"
+android:fitsSystemWindows="false"
+tools:context="ui.component.ButtonGroupsActivity">
+
+<com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/appbarlayout"
+    android:paddingTop="48dp"
+    android:background="?attr/colorSecondaryContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        style="?attr/collapsingToolbarLayoutMediumStyle"
+        android:id="@+id/collapsingtoolbarlayout"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="8dp"
+        android:layout_height="?attr/collapsingToolbarLayoutMediumSize"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+        app:titleCollapseMode="scale"
+        app:toolbarId="@id/toolbar"
+        app:contentScrim="?attr/colorSecondaryContainer"
+        app:statusBarScrim="@color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_collapseMode="pin">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_weight="1"
+                android:elevation="0dp"
+                app:title="Button Groups"/>
+
+        </LinearLayout>
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+</com.google.android.material.appbar.AppBarLayout>
+
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/nested_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:paddingTop="16dp"
+    android:paddingBottom="80dp"
+    android:paddingHorizontal="16dp"
+    android:scrollbarStyle="outsideOverlay"
+    android:scrollbars="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:shapeAppearanceOverlay="@style/TopCornersCardShape"
+            style="?attr/materialCardViewFilledStyle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Introduction"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textColor="?attr/colorOnSurface"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button groups organize buttons and add interactions between them.There are two variants of a button group."
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:lineSpacingMultiplier="1.4"
+                    android:layout_marginBottom="16dp"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="4dp"
+            style="?attr/materialCardViewFilledStyle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Demo"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textColor="?attr/colorOnSurface"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.google.android.material.button.MaterialButtonGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:gravity="center_horizontal"
+                        android:spacing="4dp">
+                        <Button
+                            style="?attr/materialIconButtonFilledStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            app:iconGravity="textStart"
+                            app:icon="@drawable/ic_baseline_skip_previous_24"/>
+                        <Button
+                            style="?attr/materialIconButtonFilledStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            app:iconGravity="textStart"
+                            app:icon="@drawable/ic_baseline_play_arrow_24"/>
+                        <Button
+                            style="?attr/materialIconButtonFilledStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            app:iconGravity="textStart"
+                            app:icon="@drawable/ic_baseline_skip_next_24"/>
+                    </com.google.android.material.button.MaterialButtonGroup>
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:shapeAppearanceOverlay="@style/BottomCornerCardShape"
+            style="?attr/materialCardViewFilledStyle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Code "
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textColor="?attr/colorOnSurface" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="XML :"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:lineSpacingMultiplier="1.4"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/xmlCodeCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:strokeColor="@color/transparent"
+                    app:cardBackgroundColor="@android:color/black">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="horizontal">
+
+                            <TextView
+                                android:id="@+id/xmlCodeText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;\n&lt;androidx.coordinatorlayout.widget.CoordinatorLayout\n    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;\n    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;\n    xmlns:tools=&quot;http://schemas.android.com/apk/res/tools&quot;\n    android:id=&quot;@+id/main&quot;\n    android:layout_width=&quot;match_parent&quot;\n    android:layout_height=&quot;match_parent&quot;\n    android:background=&quot;?attr/colorSecondaryContainer&quot;\n    android:fitsSystemWindows=&quot;false&quot;\n    tools:context=&quot;ui.component.AppBarActivity&quot;&gt;\n\n    &lt;com.google.android.material.appbar.AppBarLayout\n        android:id=&quot;@+id/appbarlayout&quot;\n        android:paddingTop=&quot;48dp&quot;\n        android:background=&quot;?attr/colorSecondaryContainer&quot;\n        android:layout_width=&quot;match_parent&quot;\n        android:layout_height=&quot;wrap_content&quot;\n        android:fitsSystemWindows=&quot;true&quot;&gt;\n\n        &lt;com.google.android.material.appbar.CollapsingToolbarLayout\n            style=&quot;?attr/collapsingToolbarLayoutMediumStyle&quot;\n            android:id=&quot;@+id/collapsingtoolbarlayout&quot;\n            android:layout_width=&quot;match_parent&quot;\n            android:paddingHorizontal=&quot;8dp&quot;\n            android:layout_height=&quot;?attr/collapsingToolbarLayoutMediumSize&quot;\n            app:layout_scrollFlags=&quot;scroll|exitUntilCollapsed|snap&quot;\n            app:titleCollapseMode=&quot;scale&quot;\n            app:toolbarId=&quot;@id/toolbar&quot;\n            app:contentScrim=&quot;?attr/colorSecondaryContainer&quot;\n            app:statusBarScrim=&quot;@color/transparent&quot;&gt;\n\n            &lt;LinearLayout\n                android:layout_width=&quot;match_parent&quot;\n                android:layout_height=&quot;wrap_content&quot;\n                android:orientation=&quot;horizontal&quot;\n                app:layout_collapseMode=&quot;pin&quot;&gt;\n\n                &lt;com.google.android.material.appbar.MaterialToolbar\n                    android:id=&quot;@+id/toolbar&quot;\n                    android:layout_width=&quot;0dp&quot;\n                    android:layout_height=&quot;?attr/actionBarSize&quot;\n                    android:layout_weight=&quot;1&quot;\n                    android:elevation=&quot;0dp&quot;\n                    app:title=&quot;App Bars&quot;/&gt;\n\n            &lt;/LinearLayout&gt;\n        &lt;/com.google.android.material.appbar.CollapsingToolbarLayout&gt;\n    &lt;/com.google.android.material.appbar.AppBarLayout&gt;\n\n    &lt;androidx.core.widget.NestedScrollView\n        android:id=&quot;@+id/nested_scroll_view&quot;\n        android:layout_width=&quot;match_parent&quot;\n        android:layout_height=&quot;match_parent&quot;\n        android:clipToPadding=&quot;false&quot;\n        android:paddingTop=&quot;16dp&quot;\n        android:paddingBottom=&quot;80dp&quot;\n        android:paddingHorizontal=&quot;16dp&quot;\n        android:scrollbarStyle=&quot;outsideOverlay&quot;\n        android:scrollbars=&quot;vertical&quot;\n        app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot;&gt;\n\n        &lt;LinearLayout\n            android:layout_width=&quot;match_parent&quot;\n            android:layout_height=&quot;wrap_content&quot;\n            android:orientation=&quot;vertical&quot;&gt;"
+                                android:textAppearance="?attr/textAppearanceBodySmall"
+                                android:fontFamily="monospace"
+                                android:textColor="@android:color/white"
+                                android:textSize="11sp"
+                                android:textIsSelectable="true"/>
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
