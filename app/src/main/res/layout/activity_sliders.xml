@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorSurface"
     android:fitsSystemWindows="false"
-    tools:context="ui.component.AppBarActivity">
+    tools:context="ui.component.SlidersActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
@@ -42,7 +42,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_weight="1"
                     android:elevation="0dp"
-                    app:title="App Bars"/>
+                    app:title="Sliders Activity"/>
 
             </LinearLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -82,11 +82,93 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="App bars are placed at the top of the screen to help people navigate through a product. There are four variants of app bars. \n \nNote: The top app bar component is renamed to app bar in the design language."
+                        android:text="Sliders let users make selections from a range of values."
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
                         android:layout_marginBottom="16dp"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="?attr/colorOnSurface"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="4dp"
+                style="?attr/materialCardViewFilledStyle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Demo"
+                        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                        android:textColor="?attr/colorOnSurface"
+                        android:layout_marginBottom="0dp"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Standard : "
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:lineSpacingMultiplier="1.4"
+                        android:layout_marginTop="16dp"/>
+
+                    <com.google.android.material.slider.Slider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:value="20.0"
+                        android:valueFrom="0.0"
+                        android:valueTo="100.0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Centered : "
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:lineSpacingMultiplier="1.4"
+                        android:layout_marginTop="16dp"/>
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:value="0.0"
+                        android:valueFrom="-100.0"
+                        android:valueTo="100.0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Range : "
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:lineSpacingMultiplier="1.4"
+                        android:layout_marginTop="16dp"/>
+
+                    <com.google.android.material.slider.RangeSlider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:values="@array/initial_slider_values"
+                        android:valueFrom="0.0"
+                        android:valueTo="100.0" />
+
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

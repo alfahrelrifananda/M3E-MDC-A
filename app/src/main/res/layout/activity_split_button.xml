@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorSurface"
     android:fitsSystemWindows="false"
-    tools:context="ui.component.ProgressIndicatorsActivity">
+    tools:context="ui.component.SplitButtonActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
@@ -42,7 +42,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_weight="1"
                     android:elevation="0dp"
-                    app:title="Progress Indicators"/>
+                    app:title="Split Button"/>
 
             </LinearLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -82,7 +82,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Progress indicators express an unspecified wait time or display the length of a process. Progress indicators show the status of a process in real time. There are two variants of progress indicators."
+                        android:text="Split buttons open a menu to give people more options related to an action. It is a specialized type of the connected button group. The trailing button is checkable with an animated icon."
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
@@ -123,62 +123,80 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Linear Progress Indicators (Determinate) : "
+                        android:text="Label + icon : "
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
                         android:layout_marginTop="16dp"/>
 
-                    <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Linear Progress Indicators (Indeterminate) : "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"
-                        android:layout_marginTop="16dp"/>
-
-                    <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:wavelengthIndeterminate="33dp"
-                        app:waveAmplitude="2dp"
-                        android:indeterminate="true" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Circullar Progress Indicators (Determinate) : "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"
-                        android:layout_marginTop="16dp"/>
-
-                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                    <com.google.android.material.button.MaterialSplitButton
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:indeterminate="true" />
-
+                        android:layout_height="wrap_content">
+                        <Button
+                            style="?attr/materialSplitButtonLeadingFilledStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Edit"
+                            app:icon="@drawable/ic_outline_ink_pen_24"
+                            />
+                        <Button
+                            style="?attr/materialSplitButtonIconFilledStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:icon="@drawable/m3_split_button_chevron_avd"
+                            />
+                    </com.google.android.material.button.MaterialSplitButton>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Circullar Progress Indicators (Indeterminate) : "
+                        android:text="Label : "
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
                         android:layout_marginTop="16dp"/>
 
-                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                    <com.google.android.material.button.MaterialSplitButton
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:wavelengthIndeterminate="11dp"
-                        app:waveAmplitude="2dp"
-                        android:indeterminate="true" />
+                        android:layout_height="wrap_content">
+                        <Button
+                            style="?attr/materialSplitButtonLeadingFilledStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Edit"
+                            />
+                        <Button
+                            style="?attr/materialSplitButtonIconFilledStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:icon="@drawable/m3_split_button_chevron_avd"
+                            />
+                    </com.google.android.material.button.MaterialSplitButton>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Icon : "
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:lineSpacingMultiplier="1.4"
+                        android:layout_marginTop="16dp"/>
+
+                    <com.google.android.material.button.MaterialSplitButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <Button
+                            style="?attr/materialSplitButtonLeadingFilledStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:icon="@drawable/ic_outline_ink_pen_24"
+                            />
+                        <Button
+                            style="?attr/materialSplitButtonIconFilledStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:icon="@drawable/m3_split_button_chevron_avd"
+                            />
+                    </com.google.android.material.button.MaterialSplitButton>
 
 
                 </LinearLayout>

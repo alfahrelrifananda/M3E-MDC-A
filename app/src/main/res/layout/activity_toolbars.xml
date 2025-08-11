@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorSurface"
     android:fitsSystemWindows="false"
-    tools:context="ui.component.ProgressIndicatorsActivity">
+    tools:context="ui.component.ToolbarsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
@@ -42,7 +42,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_weight="1"
                     android:elevation="0dp"
-                    app:title="Progress Indicators"/>
+                    app:title="Toolbars"/>
 
             </LinearLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -82,7 +82,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Progress indicators express an unspecified wait time or display the length of a process. Progress indicators show the status of a process in real time. There are two variants of progress indicators."
+                        android:text="Split buttons open a menu to give people more options related to an action. It is a specialized type of the connected button group. The trailing button is checkable with an animated icon."
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?attr/colorOnSurfaceVariant"
                         android:lineSpacingMultiplier="1.4"
@@ -120,65 +120,89 @@
                         android:layout_marginBottom="0dp"/>
 
 
-                    <TextView
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Linear Progress Indicators (Determinate) : "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"
-                        android:layout_marginTop="16dp"/>
+                        android:layout_height="match_parent">
 
-                    <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        <!-- sample screen content -->
+                        <androidx.core.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Linear Progress Indicators (Indeterminate) : "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"
-                        android:layout_marginTop="16dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tools" />
+                            </LinearLayout>
+                        </androidx.core.widget.NestedScrollView>
 
-                    <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:wavelengthIndeterminate="33dp"
-                        app:waveAmplitude="2dp"
-                        android:indeterminate="true" />
+                        <com.google.android.material.dockedtoolbar.DockedToolbarLayout
+                            android:id="@+id/docked_toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            app:layout_behavior="com.google.android.material.behavior.HideViewOnScrollBehavior">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Circullar Progress Indicators (Determinate) : "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"
-                        android:layout_marginTop="16dp"/>
+                            <!-- docked toolbar sample content -->
+                            <com.google.android.material.overflow.OverflowLinearLayout
+                                android:id="@+id/docked_toolbar_child"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:minWidth="48dp"
+                                    android:layout_weight="1"
+                                    app:layout_overflowIcon="@drawable/ic_arrow_back_24">
+                                    <Button
+                                        android:id="@+id/docked_toolbar_back_button"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        style="?attr/materialIconButtonStyle"
+                                        app:icon="@drawable/ic_arrow_back_24" />
+                                </FrameLayout>
 
-                    <com.google.android.material.progressindicator.CircularProgressIndicator
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:indeterminate="true" />
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:minWidth="48dp"
+                                    android:layout_weight="1"
+                                    app:layout_overflowIcon="@drawable/ic_baseline_add_24">
+                                    <Button
+                                        android:id="@+id/docked_toolbar_add_button"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        style="?attr/materialIconButtonStyle"
+                                        app:icon="@drawable/ic_baseline_add_24" />
+                                </FrameLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Circullar Progress Indicators (Indeterminate) : "
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?attr/colorOnSurfaceVariant"
-                        android:lineSpacingMultiplier="1.4"
-                        android:layout_marginTop="16dp"/>
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:minWidth="48dp"
+                                    android:layout_weight="1"
+                                    app:layout_overflowIcon="@drawable/ic_baseline_arrow_forward_24">
+                                    <Button
+                                        android:id="@+id/docked_toolbar_forward_button"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        style="?attr/materialIconButtonStyle"
+                                        app:icon="@drawable/ic_baseline_arrow_forward_24" />
+                                </FrameLayout>
+                            </com.google.android.material.overflow.OverflowLinearLayout>
 
-                    <com.google.android.material.progressindicator.CircularProgressIndicator
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:wavelengthIndeterminate="11dp"
-                        app:waveAmplitude="2dp"
-                        android:indeterminate="true" />
-
+                        </com.google.android.material.dockedtoolbar.DockedToolbarLayout>
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
                 </LinearLayout>

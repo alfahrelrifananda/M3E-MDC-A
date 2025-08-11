@@ -34,6 +34,9 @@
         <activity android:name=".ui.component.NavigationBarActivity" />
         <activity android:name=".ui.component.NavigationRailActivity" />
         <activity android:name=".ui.component.ProgressIndicatorsActivity" />
+        <activity android:name=".ui.component.SlidersActivity"/>
+        <activity android:name=".ui.component.SplitButtonActivity"/>
+        <activity android:name=".ui.component.ToolbarsActivity"/>
     </application>
 
 </manifest>

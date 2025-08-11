@@ -6,7 +6,6 @@ import android.view.WindowManager;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
-
 import com.example.m3emdcandroid.ui.component.AppBarActivity;
 import com.example.m3emdcandroid.ui.component.ButtonGroupsActivity;
 import com.example.m3emdcandroid.ui.component.CommonButtonActivity;
@@ -18,10 +17,13 @@ import com.example.m3emdcandroid.ui.component.LoadingIndicatorActivity;
 import com.example.m3emdcandroid.ui.component.NavigationBarActivity;
 import com.example.m3emdcandroid.ui.component.NavigationRailActivity;
 import com.example.m3emdcandroid.ui.component.ProgressIndicatorsActivity;
+import com.example.m3emdcandroid.ui.component.SlidersActivity;
+import com.example.m3emdcandroid.ui.component.SplitButtonActivity;
+import com.example.m3emdcandroid.ui.component.ToolbarsActivity;
 import com.google.android.material.card.MaterialCardView;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupClickedCard() {
-        MaterialCardView demoCard = findViewById(R.id.app_bars_card);
+        MaterialCardView abCard = findViewById(R.id.app_bars_card);
         MaterialCardView bgCard = findViewById(R.id.button_groups_card);
         MaterialCardView cbCard = findViewById(R.id.common_buttons_card);
         MaterialCardView efCard = findViewById(R.id.extended_fab_card);
@@ -49,8 +51,13 @@ public class MainActivity extends AppCompatActivity {
         MaterialCardView nbCard = findViewById(R.id.navigation_bar_card);
         MaterialCardView nrCard = findViewById(R.id.navigation_rail_card);
         MaterialCardView piCard = findViewById(R.id.progress_indicators_card);
+        MaterialCardView sCard = findViewById(R.id.sliders_card);
+        MaterialCardView sbCard = findViewById(R.id.split_button_card);
+        MaterialCardView tCard = findViewById(R.id.toolbar_card);
 
-        demoCard.setOnClickListener(v -> {
+
+
+        abCard.setOnClickListener(v -> {
             Intent intent = new Intent(this, AppBarActivity.class);
             startActivity(intent);
         });
@@ -99,6 +106,21 @@ public class MainActivity extends AppCompatActivity {
 
         piCard.setOnClickListener(v -> {
             Intent intent = new Intent(this, ProgressIndicatorsActivity.class);
+            startActivity(intent);
+        });
+
+        sCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, SlidersActivity.class);
+            startActivity(intent);
+        });
+
+        sbCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, SplitButtonActivity.class);
+            startActivity(intent);
+        });
+
+        tCard.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ToolbarsActivity.class);
             startActivity(intent);
         });
 
