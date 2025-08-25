@@ -6,4 +6,6 @@
     <string name="top_and_bottom_app_bars_with_dynamic_layouts">Top and bottom app bars with dynamic layouts</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
 </resources>

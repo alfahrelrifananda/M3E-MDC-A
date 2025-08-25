@@ -49,4 +49,9 @@
         <item name="cornerSizeBottomRight">8dp</item>
     </style>
 
+    <style name="BottomNavigationView">
+        <item name="colorSecondaryContainer">?attr/colorPrimary</item>
+        <item name="colorOnSecondaryContainer">?attr/colorOnPrimary</item>
+    </style>
+
 </resources>
