@@ -15,7 +15,6 @@
         android:layout_height="match_parent"
         android:scrollbarThumbVertical="@null"
         android:scrollbarThumbHorizontal="@null"
-        android:paddingTop="48dp"
         android:paddingBottom="72dp"
         android:clipToPadding="false">
 
