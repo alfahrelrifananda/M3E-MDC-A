@@ -2,7 +2,6 @@ package com.example.m3emdcandroid;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
@@ -17,12 +16,10 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-    private TextView toolbarTitle;
     private CollapsingToolbarLayout collapsingToolbar;
     private String currentTitle = "Home";
 
@@ -73,49 +70,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupToolbar() {
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
-        toolbarTitle = findViewById(R.id.toolbar_title_main);
-        collapsingToolbar = findViewById(R.id.collapsing_toolbar);
-        AppBarLayout appBarLayout = findViewById(R.id.app_bar_layout);
+        collapsingToolbar = findViewById(R.id.collapsingtoolbarlayout);
+        AppBarLayout appBarLayout = findViewById(R.id.appbarlayout);
 
-        if (toolbar != null && toolbarTitle != null && collapsingToolbar != null && appBarLayout != null) {
+        if (toolbar != null && collapsingToolbar != null && appBarLayout != null) {
             setSupportActionBar(toolbar);
             if (getSupportActionBar() != null) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             }
 
             collapsingToolbar.setTitle(currentTitle);
-            setupCollapsingToolbarTitleAnimation(appBarLayout);
         }
-    }
-
-    private void setupCollapsingToolbarTitleAnimation(AppBarLayout appBarLayout) {
-        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                if (toolbarTitle == null || collapsingToolbar == null) {
-                    return;
-                }
-
-                int totalScrollRange = appBarLayout.getTotalScrollRange();
-                if (totalScrollRange == 0) {
-                    return;
-                }
-
-                float percentage = Math.abs(verticalOffset) / (float) totalScrollRange;
-
-                // More aggressive transition for better collapsing effect
-                if (percentage >= 0.7f) {
-                    toolbarTitle.setVisibility(View.VISIBLE);
-                    float alpha = Math.min(1.0f, (percentage - 0.7f) / 0.3f);
-                    toolbarTitle.setAlpha(alpha);
-                    collapsingToolbar.setTitle("");
-                } else {
-                    toolbarTitle.setVisibility(View.INVISIBLE);
-                    toolbarTitle.setAlpha(0f);
-                    collapsingToolbar.setTitle(currentTitle);
-                }
-            }
-        });
     }
 
     private void setupBottomNavigation() {
@@ -148,9 +113,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateTitle(String title) {
         currentTitle = title;
-        if (toolbarTitle != null) {
-            toolbarTitle.setText(currentTitle);
-        }
         if (collapsingToolbar != null) {
             collapsingToolbar.setTitle(currentTitle);
         }
