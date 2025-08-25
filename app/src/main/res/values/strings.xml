@@ -4,4 +4,6 @@
     <string name="new_material_3_expressive_components">New Material 3 Expressive Components</string>
     <string name="app_bars">App bars</string>
     <string name="top_and_bottom_app_bars_with_dynamic_layouts">Top and bottom app bars with dynamic layouts</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
