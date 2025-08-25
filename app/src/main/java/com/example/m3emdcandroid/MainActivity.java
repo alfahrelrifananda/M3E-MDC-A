@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private TextView toolbarTitle;
     private CollapsingToolbarLayout collapsingToolbar;
-    private String currentTitle = "M3 EMD Components";
+    private String currentTitle = "Home";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
         setupWindowInsets();
         setupToolbar();
         setupBottomNavigation();
+
         if (savedInstanceState == null) {
             replaceFragment(new HomeFragment());
+            bottomNavigationView.setSelectedItemId(R.id.nav_home);
         }
     }
 
@@ -50,18 +52,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        );
     }
 
     private void setupWindowInsets() {
         View rootView = findViewById(R.id.container);
         if (rootView != null) {
             ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, windowInsets) -> {
+                androidx.core.graphics.Insets systemBars = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
                 androidx.core.graphics.Insets navigationBar = windowInsets.getInsets(WindowInsetsCompat.Type.navigationBars());
-                return WindowInsetsCompat.CONSUMED;
+
+                BottomNavigationView bottomNav = findViewById(R.id.nav_view);
+                if (bottomNav != null) {
+                    bottomNav.setPadding(0, 0, 0, navigationBar.bottom);
+                }
+
+                return windowInsets;
             });
         }
     }
@@ -92,11 +97,16 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 int totalScrollRange = appBarLayout.getTotalScrollRange();
+                if (totalScrollRange == 0) {
+                    return;
+                }
+
                 float percentage = Math.abs(verticalOffset) / (float) totalScrollRange;
 
-                if (percentage > 0.7f) {
+                // More aggressive transition for better collapsing effect
+                if (percentage >= 0.7f) {
                     toolbarTitle.setVisibility(View.VISIBLE);
-                    float alpha = (percentage - 0.7f) / 0.3f;
+                    float alpha = Math.min(1.0f, (percentage - 0.7f) / 0.3f);
                     toolbarTitle.setAlpha(alpha);
                     collapsingToolbar.setTitle("");
                 } else {
@@ -110,6 +120,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupBottomNavigation() {
         bottomNavigationView = findViewById(R.id.nav_view);
+        if (bottomNavigationView == null) {
+            return;
+        }
+
         bottomNavigationView.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
             String newTitle = currentTitle;

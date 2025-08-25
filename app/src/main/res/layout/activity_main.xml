@@ -5,14 +5,15 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceContainerHighest"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorSurfaceContainerHigh"
-        android:paddingTop="48dp"
+        android:background="?attr/colorSurfaceContainerHighest"
         android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -20,9 +21,9 @@
             style="?attr/collapsingToolbarLayoutMediumStyle"
             android:layout_width="match_parent"
             android:layout_height="?attr/collapsingToolbarLayoutMediumSize"
-            app:contentScrim="?attr/colorSurfaceContainerHigh"
-            app:statusBarScrim="@color/transparent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:contentScrim="?attr/colorSurfaceContainerHighest"
+            app:statusBarScrim="@android:color/transparent"
+            app:layout_scrollFlags="scroll">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
@@ -31,9 +32,7 @@
                 android:elevation="0dp"
                 app:layout_collapseMode="pin"
                 app:navigationIcon="@null"
-                app:title=""
-                android:textFontWeight="550"
-                app:titleTextColor="?attr/colorOnSurface">
+                app:title="">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -49,9 +48,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginStart="16dp"
-                        android:textSize="24sp"
+                        android:textSize="22sp"
                         android:text="Home"
-                        android:textFontWeight="550"
+                        android:textStyle="bold"
                         android:textColor="?attr/colorOnSurface"
                         android:alpha="0.0"
                         android:visibility="invisible" />
@@ -64,33 +63,27 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="bottom"
+        android:layout_marginBottom="80dp"
         app:defaultNavHost="true"
         app:navGraph="@navigation/bottom_nav" />
 
-    <LinearLayout
-        android:id="@+id/bottomContainer"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_gravity="bottom"
-        android:orientation="vertical"
-        android:background="@color/transparent"
-        android:elevation="16dp">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="20dp"
-            app:labelVisibilityMode="labeled"
-            android:background="?attr/colorSurface"
-            app:menu="@menu/bottom_navigation_menu" />
-
-    </LinearLayout>
+        app:labelVisibilityMode="unlabeled"
+        android:theme="@style/BottomNavigationView"
+        android:background="?attr/colorSurfaceContainerHighest"
+        android:elevation="8dp"
+        app:menu="@menu/bottom_navigation_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
